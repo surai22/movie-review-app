@@ -7,9 +7,23 @@ const form = ref({
   title: '',
   director: '',
   year: new Date().getFullYear(),
+  genre: 'ドラマ',
   rating: 3,
   review: ''
 })
+
+const genres = [
+  'アクション',
+  'コメディ',
+  'ドラマ',
+  'SF',
+  'ホラー',
+  'ミステリー',
+  'ロマンス',
+  'アニメ',
+  'ドキュメンタリー',
+  'その他'
+]
 
 const submitForm = () => {
   if (form.value.title && form.value.director && form.value.review) {
@@ -20,6 +34,7 @@ const submitForm = () => {
       title: '',
       director: '',
       year: new Date().getFullYear(),
+      genre: 'ドラマ',
       rating: 3,
       review: ''
     }
@@ -64,6 +79,19 @@ const submitForm = () => {
             :max="new Date().getFullYear() + 5"
           />
         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="genre">ジャンル</label>
+        <select
+          id="genre"
+          v-model="form.genre"
+          class="genre-select"
+        >
+          <option v-for="genre in genres" :key="genre" :value="genre">
+            {{ genre }}
+          </option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -139,7 +167,8 @@ label {
 
 input[type="text"],
 input[type="number"],
-textarea {
+textarea,
+select {
   padding: 0.75rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -150,9 +179,15 @@ textarea {
 
 input[type="text"]:focus,
 input[type="number"]:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
   border-color: #667eea;
+}
+
+.genre-select {
+  cursor: pointer;
+  background-color: white;
 }
 
 input[type="range"] {

@@ -21,6 +21,7 @@ defineEmits(['delete'])
     <div class="movie-info">
       <p class="director">🎬 {{ movie.director }}</p>
       <p class="year">📅 {{ movie.year }}年</p>
+      <p class="genre">🎭 {{ movie.genre }}</p>
     </div>
     
     <div class="rating">

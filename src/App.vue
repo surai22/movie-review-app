@@ -9,6 +9,7 @@ const movies = ref([
     title: 'インセプション',
     director: 'クリストファー・ノーラン',
     year: 2010,
+    genre: 'SF',
     rating: 5,
     review: '夢の中の夢という斬新な設定。映像美と複雑なストーリーが見事に融合した傑作。'
   },
@@ -17,6 +18,7 @@ const movies = ref([
     title: 'ショーシャンクの空に',
     director: 'フランク・ダラボン',
     year: 1994,
+    genre: 'ドラマ',
     rating: 5,
     review: '希望と友情の物語。何度見ても心に響く名作。'
   }
