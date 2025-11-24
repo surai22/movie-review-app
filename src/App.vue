@@ -1,9 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import MovieList from './components/MovieList.vue'
 import MovieForm from './components/MovieForm.vue'
 
-const movies = ref([
+const STORAGE_KEY = 'movie-review-app-data'
+
+// デフォルトのサンプルデータ
+const defaultMovies = [
   {
     id: 1,
     title: 'インセプション',
@@ -22,9 +25,56 @@ const movies = ref([
     rating: 5,
     review: '希望と友情の物語。何度見ても心に響く名作。'
   }
-])
+]
 
+const movies = ref([])
 const nextId = ref(3)
+
+// LocalStorageからデータを読み込み
+const loadFromStorage = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      const data = JSON.parse(saved)
+      movies.value = data.movies
+      nextId.value = data.nextId
+    } else {
+      // 初回起動時はサンプルデータを使用
+      movies.value = defaultMovies
+    }
+  } catch (error) {
+    console.error('Error loading from localStorage:', error)
+    movies.value = defaultMovies
+  }
+}
+
+// LocalStorageにデータを保存
+const saveToStorage = () => {
+  try {
+    const data = {
+      movies: movies.value,
+      nextId: nextId.value
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  } catch (error) {
+    console.error('Error saving to localStorage:', error)
+  }
+}
+
+// コンポーネントマウント時にデータを読み込み
+onMounted(() => {
+  loadFromStorage()
+})
+
+// moviesの変更を監視して自動保存
+watch(movies, () => {
+  saveToStorage()
+}, { deep: true })
+
+// nextIdの変更も監視
+watch(nextId, () => {
+  saveToStorage()
+})
 
 const addMovie = (movie) => {
   movies.value.push({
