@@ -37,19 +37,21 @@ defineEmits(['delete'])
 
 <style scoped>
 .movie-card {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border: 1px solid #3a3a3a;
 }
 
 .movie-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  border-color: #4a4a4a;
 }
 
 .movie-header {
@@ -61,14 +63,14 @@ defineEmits(['delete'])
 
 .movie-header h3 {
   margin: 0;
-  color: #333;
+  color: #e0e0e0;
   font-size: 1.3rem;
   flex: 1;
   word-break: break-word;
 }
 
 .delete-btn {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(50, 50, 50, 0.8);
   border: none;
   padding: 0.5rem;
   border-radius: 6px;
@@ -79,7 +81,7 @@ defineEmits(['delete'])
 }
 
 .delete-btn:hover {
-  background: rgba(255, 100, 100, 0.8);
+  background: rgba(200, 50, 50, 0.8);
   transform: scale(1.1);
 }
 
@@ -91,7 +93,7 @@ defineEmits(['delete'])
 
 .movie-info p {
   margin: 0;
-  color: #555;
+  color: #b0b0b0;
   font-size: 0.95rem;
 }
 
@@ -104,7 +106,7 @@ defineEmits(['delete'])
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(50, 50, 50, 0.6);
   border-radius: 8px;
 }
 
@@ -114,19 +116,19 @@ defineEmits(['delete'])
 
 .rating-number {
   font-weight: 600;
-  color: #667eea;
+  color: #7c8aff;
 }
 
 .review {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(40, 40, 40, 0.8);
   padding: 1rem;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #7c8aff;
 }
 
 .review p {
   margin: 0;
-  color: #333;
+  color: #d0d0d0;
   line-height: 1.6;
   font-size: 0.95rem;
 }

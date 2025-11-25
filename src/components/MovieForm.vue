@@ -129,15 +129,16 @@ const submitForm = () => {
 
 <style scoped>
 .movie-form {
-  background: white;
+  background: #2a2a2a;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #3a3a3a;
 }
 
 .movie-form h2 {
   margin: 0 0 1.5rem 0;
-  color: #333;
+  color: #e0e0e0;
   font-size: 1.5rem;
 }
 
@@ -161,7 +162,7 @@ form {
 
 label {
   font-weight: 600;
-  color: #555;
+  color: #b0b0b0;
   font-size: 0.95rem;
 }
 
@@ -170,11 +171,13 @@ input[type="number"],
 textarea,
 select {
   padding: 0.75rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #3a3a3a;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.2s;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
 }
 
 input[type="text"]:focus,
@@ -182,12 +185,13 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #7c8aff;
+  background-color: #242424;
 }
 
 .genre-select {
   cursor: pointer;
-  background-color: white;
+  background-color: #1f1f1f;
 }
 
 input[type="range"] {
@@ -205,7 +209,7 @@ textarea {
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4a5edc 0%, #5a3d8f 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -218,7 +222,7 @@ textarea {
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(74, 94, 220, 0.5);
 }
 
 .submit-btn:active {

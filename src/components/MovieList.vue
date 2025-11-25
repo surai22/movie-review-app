@@ -33,22 +33,23 @@ defineEmits(['delete-movie'])
 
 <style scoped>
 .movie-list {
-  background: white;
+  background: #2a2a2a;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #3a3a3a;
 }
 
 .movie-list h2 {
   margin: 0 0 1.5rem 0;
-  color: #333;
+  color: #e0e0e0;
   font-size: 1.5rem;
 }
 
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
-  color: #999;
+  color: #888;
 }
 
 .empty-state p {
@@ -58,7 +59,7 @@ defineEmits(['delete-movie'])
 
 .empty-state .subtitle {
   font-size: 1rem;
-  color: #bbb;
+  color: #666;
 }
 
 .movies-grid {
